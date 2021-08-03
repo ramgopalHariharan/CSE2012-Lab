@@ -7,7 +7,6 @@ ramgopal.hariharan2020@vitstudent.ac.in
 //Factorial Using Recursion
 
 #include<iostream>
-#define MAXSIZE 100
 
 using namespace std;
 
