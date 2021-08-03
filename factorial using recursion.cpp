@@ -12,13 +12,13 @@ ramgopal.hariharan2020@vitstudent.ac.in
 using namespace std;
 
 long factorial(int number) {
-  if(number==1) return 1;
-  else return number*factorial(number-1)
+	if(number==1) return 1;
+	else return number*factorial(number-1);
 }
 
 int main() {
 	int x;
-  cout<<"Enter Number:"
+	cout<<"Enter Number:";
 	cin>>x;
 	cout<<"Factorial of x: "<<factorial(x);
 	return 0; 
