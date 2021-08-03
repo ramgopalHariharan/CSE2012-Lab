@@ -18,6 +18,7 @@ void input(int a[], int& n) {
 		cout<<"Array size too large\n";
 		input(a, n);
 	}
+	cout<<"Enter Array elements: ";
 	for(int i=0;i<n;i++) {
 		cin>>a[i];
 	}
