@@ -47,4 +47,5 @@ int main() {
 	cout<<k<<"th smallest element = "<<a[k-1]<<endl;
 	cout<<k<<"th largest element = "<<a[n-k]<<endl;
 	cout<<endl;
+	
 }
