@@ -6,6 +6,7 @@ using namespace std;
 void MinMaxIterative(int a[], int n) {
 	int max = -32767, min = 327267;
 	int count = 0;
+	//Loop through all of the elements of the array
 	for(int i=0;i<n;i++) {
 		count++;
 		//If current element is greater than the maximum value, 
