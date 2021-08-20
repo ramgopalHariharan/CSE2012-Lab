@@ -18,6 +18,8 @@ void shiftRight(char a[], int& n) {
 	n++;
 }
 
+//Pads the shorter binary String with Extra Leading Zeroes and returns the final length
+//as Karatsubas algorithm is to be applied on numbers with an equal number of digits
 int CorrectDigits(char a[], char b[], int& n1, int& n2) {
 	if(n1==n2) return n1;
 	while(n1>n2) {
@@ -112,5 +114,3 @@ int main() {
 	cout<<"Answer: "<<ans<<endl;
 	return 0;
 }
-
-
