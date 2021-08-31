@@ -45,8 +45,7 @@ void MatMulBruteForce(int a[][10], int b[][10], int n) {
 
 int main() {
 	int a[10][10], b[10][10], c[10][10], n;
-	n = 5;
-//	cout<<"Enter Dimension of Square Matrrices: "; cin>>n;
+	cout<<"Enter Dimension of Square Matrrices: "; cin>>n;
 	generateMatrix(a, n);
 	generateMatrix(b, n);
 	cout<<"\nMatrix A: \n"; display(a, n);
