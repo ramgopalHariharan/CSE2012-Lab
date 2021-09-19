@@ -7,6 +7,9 @@ struct Item {
 	int number;
 	int weight;
 	int value;
+	void disp() {
+		printf(" I%-1d w=%-2d v=%-3d  ", number, weight, value);
+	}
 };
 
 ostream& operator << (ostream& out, Item i) {
@@ -69,7 +72,7 @@ int main() {
 		} else values[0][i] = 0;
 	}
 	
-	//Fill in the rest og the values recursively
+	//Fill in the rest of the values recursively
 	for(int i=1;i<noOfItems;i++) {
 		for(int j=0;j<maxWeight+1;j++) {
 			values[i][j] = 0;
@@ -86,6 +89,17 @@ int main() {
 	
 	display("Items", items, noOfItems);
 	
+	cout<<"Dynamic Programming Array: \n";
+	for(int i=-1;i<noOfItems;i++) {
+		for(int j=-1;j<maxWeight+1;j++) {
+			if(i<0 && j<0) printf("%-15s", "Weight Allowed: ");
+			else if(i<0) printf("%-3d ", j);
+			else if(j<0) items[i].disp();
+			else printf("%-3d ", values[i][j]);
+		}
+		cout<<endl;
+	}
+	
 	//Maximum Value Obtainable is at the bottom right corner of the values array
 	cout<<"Maximum Value = "<<values[noOfItems-1][maxWeight]<<endl;
 	
@@ -98,7 +112,7 @@ int main() {
 			cout<<"Item "<<items[i].number<<" discarded\n";
 			i--;
 		}
-		//If teh maximum value changes, that item has been taken and 
+		//If the maximum value changes, that item has been taken and 
 		//it's weight must be subtracted from the carried weight 
 		else {
 			j-=items[i].weight;
