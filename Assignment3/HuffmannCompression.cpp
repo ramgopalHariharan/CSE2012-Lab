@@ -12,7 +12,6 @@ struct Node {
 	Node* left;
 	Node* right;
 	Node* parent;
-	Node* next;
 	//Initializes th node with a character and whether the node is a leaf or not
 	//(Only characters can be leaves in the Huffn=mann Tree)
 	Node(int freq_ = 0, char character_ = '\0', bool isLeaf = false) {
@@ -21,27 +20,6 @@ struct Node {
 		isLeaf = isLeaf;
 		codeLength = 0;
 		next = left = right = parent = NULL;
-	}
-	//Displays all the information related to the node in the huffmann tree 
-	//or whatever structure it is in
-	void dispTreeNode() {
-		printf("Node: %-5d / %c ", freq, character);
-		if(parent == NULL) cout<<"Parent: NULL  ";
-		else printf("Parent: %-5d ", parent->freq);
-		printf(" Height: %-3d", codeLength);
-		if(left==NULL && right==NULL) cout<<" LEAF";
-		else {
-			if(left == NULL) cout<<" Left: NULL ";
-			else printf(" Left: %-5d", left->freq);
-			if(right == NULL) cout<<" Right: NULL ";
-			else printf(" Right: %-5d", right->freq);
-		}
-		if(parent == NULL)cout<<" ROOT";
-		cout<<endl;
-	}
-	////Displays onpy the character, frequency, and the Code of the character represented by the node
-	void dispQ() {
-		printf("Character: %c Frequency: %-3d Code: %s\n",character, freq, code);
 	}
 	//Increments the frequency of the character represented by the node
 	void incr() {
@@ -258,5 +236,3 @@ int main() {
 	cout<<endl<<root->freq<<endl;
 	return 0;
 }
-
-
